@@ -171,6 +171,7 @@ export default class LoginScreen extends React.Component {
                 const response = await firebase.auth().signInWithEmailAndPassword(emailID,password)
                 if (response){
                     Alert.alert('Login Succesful')
+                    this.props.navigation.navigate('DonateBooks')
                 }
             }
             catch(error){

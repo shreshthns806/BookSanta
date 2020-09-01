@@ -18,7 +18,7 @@ export default class BookDonateScreen extends Component{
     .onSnapshot((snapshot)=>{
         var requestedBooksList = 
         snapshot.docs.map((document) => 
-           {document.data()}
+           {return document.data()}
         );
       this.setState({
         requestedBooksList : requestedBooksList
@@ -44,7 +44,11 @@ export default class BookDonateScreen extends Component{
         subtitle={item.reason_to_request}
         titleStyle={{ color: 'black', fontWeight: 'bold' }}
         rightElement={
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress = {
+              ()=>{
+                this.props.navigation.navigate('ReceiverDetails',{'details':item})
+              }
+            }>
               <Text style={{color:'#ffff'}}>View</Text>
             </TouchableOpacity>
           }

@@ -53,7 +53,7 @@ export default class BookRequestScreen extends Component{
             <KeyboardAvoidingView style={styles.keyBoardStyle}>
               <TextInput
                 style ={styles.formTextInput}
-                placeholder={"enter book name"}
+                placeholder={"Book Name Here"}
                 onChangeText={(text)=>{
                     this.setState({
                         bookName:text
@@ -65,7 +65,7 @@ export default class BookRequestScreen extends Component{
                 style ={[styles.formTextInput,{height:300}]}
                 multiline
                 numberOfLines ={8}
-                placeholder={"Why do you need the book"}
+                placeholder={"Why do you need the book?"}
                 onChangeText ={(text)=>{
                     this.setState({
                         reasonToRequest:text

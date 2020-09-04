@@ -7,7 +7,7 @@ import {AppStackNavigator} from './AppStackNavigator'
 export const AppTabNavigator = createBottomTabNavigator({
   DonateBooks : {
     screen: AppStackNavigator,
-    navigationOptions :{
+    navigationOptions : {
       tabBarIcon : <Image source={require("../assets/request-list.png")} style={{width:20, height:20}}/>,
       tabBarLabel : "Donate Books",
     }
@@ -19,4 +19,5 @@ export const AppTabNavigator = createBottomTabNavigator({
       tabBarLabel : "Book Request",
     }
   }
-});
+},
+);

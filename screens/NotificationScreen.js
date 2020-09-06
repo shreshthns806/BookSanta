@@ -14,12 +14,10 @@ export default class NotificationScreen extends Component{
       userId :  firebase.auth().currentUser.email,
       allNotifications : []
     };
-
-    this.notificationRef = null
   }
 
   getNotifications=()=>{
-    this.requestRef = db.collection("all_notifications")
+    this.notificationRef = db.collection("all_notifications")
     .where("notification_status", "==", "unread")
     .where("targeted_user_id",'==',this.state.userId)
     .onSnapshot((snapshot)=>{
@@ -35,12 +33,9 @@ export default class NotificationScreen extends Component{
     })
   }
 
+
   componentDidMount(){
     this.getNotifications()
-  }
-
-  componentWillUnmount(){
-    this.notificationRef()
   }
 
   keyExtractor = (item, index) => index.toString()

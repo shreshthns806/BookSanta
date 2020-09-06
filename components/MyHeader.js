@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { Header,Icon,Badge } from 'react-native-elements';
 import { View, Text, StyeSheet ,Alert} from 'react-native';
+import db from "../config";
 
 export default class MyHeader extends Component {
 
@@ -24,7 +25,7 @@ export default class MyHeader extends Component {
   }
 
   componentDidMount(){
-    this.getNumberOfUnreadNotifictations
+    this.getNumberOfUnreadNotifictations()
   }
 
   BellIconWithBadge = (props)=>{
